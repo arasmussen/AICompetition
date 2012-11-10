@@ -128,7 +128,7 @@ class home extends BaseController {
           '<title>Venzio Account Activation</title>' .
         '</head>' .
         '<body>' .
-          '<p>Thanks for signing up for Venzio Chess AI!</p>' .
+          '<p>Thanks for signing up for Venzio!</p>' .
           '<p>Activate your account by clicking on ' .
             '<a href="' . $url . '">this link</a>.' .
           '</p>' .

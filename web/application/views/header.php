@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chess AI</title>
+    <title>Venzio</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <script data-main="/js/<?php echo $page; ?>" src="/js/require.js"></script>

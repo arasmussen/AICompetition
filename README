@@ -1,47 +1,23 @@
 --About--
-This project's goal is to let users upload their chess AIs to our website and
-then see how they compare to other user's AIs and also watch games online.
+Venzio is a website which hosts AI competitions.
 
 --Building--
-I have the following environment variables defined in my .bashrc:
+I have defined the following environment variables in my httpd.conf using
+SetEnv.
 
-export CPP_CHESS_ROOT=~/chess
-export PHP_CHESS_ROOT=C:/cygwin/home/Andrew/chess
-export BOOST_DIR=/usr/include/boost
-export THRIFT_CPP_DIR=/usr/thrift-0.8.0/lib/cpp/src
-export THRIFT_PHP_DIR=C:/cygwin/usr/thrift-0.8.0/lib/php/src
-export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
-export CHESS_READ_PASSWORD={read password}
-export CHESS_WRITE_PASSWORD={write password}
-export CHESS_ADMIN_PASSWORD={admin password}
-export DB_ROOT_PASSWORD={db root password}
-
-Since Andrew's developing in Cygwin, g++ uses cygwin style paths and php uses
-windows style paths, which is why we have a separate path for CPP_CHESS_ROOT and
-PHP_CHESS_ROOT even though they are both technically the root directory. We are
-still looking for a workaround for this.
-
-(Windows): In addition to setting environment variables in cygwin for building,
-you'll also have to set windows environment variables for the actual execution
-of the cpp and php programs since the runtime uses windows env vars rather than
-cygwin env vars.
-
-After setting up environment variables, go to chess/server/cpp and make, which
-will place the startServer binary in chess/bin. Running this will start a
-service which will be able to keep track of current games initiated from php
-code in chess/server/php via thrift.
-
-If you're running the site live on apache, make sure to use SetEnv to set the
-above environment variables.
+export VENZIO_ROOT=/home/ec2-user/www/venzio
+export VENZIO_READ_PASSWORD={read password}
+export VENZIO_WRITE_PASSWORD={write password}
+export VENZIO_ADMIN_PASSWORD={admin password}
 
 --Database Backup--
-Everytime you make a git commit on the ec2 server, chess_root/pre-commit.sh is
-run, which currently dumps the database into chess_root/web/db.sql. This is
+Everytime you make a git commit on the ec2 server, VENZIO_ROOT/pre-commit.sh is
+run, which currently dumps the database into VENZIO_ROOT/web/db.sql. This is
 convenient so that you can have the same copy of the database as the server,
 including tables, data, everything. You'll have to set a symlink from
 .git/hooks/pre-commit to this file by doing the following:
 
-ln -s $CPP_CHESS_ROOT/.pre-commit.sh $CPP_CHESS_ROOT/.git/hooks/pre-commit
+ln -s $VENZIO_ROOT/.pre-commit.sh $VENZIO_ROOT/.git/hooks/pre-commit
 
 Note that this means that your db copy will also be committed to the server
 every time you commit, so make sure you only do this if you want that to happen.
