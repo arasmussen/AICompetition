@@ -9,6 +9,8 @@ export VENZIO_ROOT=/home/ec2-user/www/venzio
 export VENZIO_READ_PASSWORD={read password}
 export VENZIO_WRITE_PASSWORD={write password}
 export VENZIO_ADMIN_PASSWORD={admin password}
+export AMAZON_SES_ACCESS_KEY={aws access key}
+export AMAZON_SES_SECRET_KEY={aws secret key}
 
 --Database Backup--
 Everytime you make a git commit on the ec2 server, VENZIO_ROOT/pre-commit.sh is
