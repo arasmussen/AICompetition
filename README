@@ -1,25 +1,25 @@
 --About--
-Venzio is a website which hosts AI competitions.
+AI Competition is a website which hosts AI competitions.
 
 --Building--
 I have defined the following environment variables in my httpd.conf using
 SetEnv.
 
-export VENZIO_ROOT=/home/ec2-user/www/venzio
-export VENZIO_READ_PASSWORD={read password}
-export VENZIO_WRITE_PASSWORD={write password}
-export VENZIO_ADMIN_PASSWORD={admin password}
+export AI_COMPETITION_ROOT=/home/ec2-user/www/AICompetition
+export AI_COMPETITION_READ_PASSWORD={read password}
+export AI_COMPETITION_WRITE_PASSWORD={write password}
+export AI_COMPETITION_ADMIN_PASSWORD={admin password}
 export AMAZON_SES_ACCESS_KEY={aws access key}
 export AMAZON_SES_SECRET_KEY={aws secret key}
 
 --Database Backup--
-Everytime you make a git commit on the ec2 server, VENZIO_ROOT/pre-commit.sh is
-run, which currently dumps the database into VENZIO_ROOT/web/db.sql. This is
+Everytime you make a git commit on the ec2 server, AI_COMPETITION_ROOT/pre-commit.sh is
+run, which currently dumps the database into AI_COMPETITION_ROOT/web/db.sql. This is
 convenient so that you can have the same copy of the database as the server,
 including tables, data, everything. You'll have to set a symlink from
 .git/hooks/pre-commit to this file by doing the following:
 
-ln -s $VENZIO_ROOT/.pre-commit.sh $VENZIO_ROOT/.git/hooks/pre-commit
+ln -s $AI_COMPETITION_ROOT/.pre-commit.sh $AI_COMPETITION_ROOT/.git/hooks/pre-commit
 
 Note that this means that your db copy will also be committed to the server
 every time you commit, so make sure you only do this if you want that to happen.

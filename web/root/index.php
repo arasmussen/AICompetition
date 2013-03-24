@@ -56,7 +56,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = getenv('VENZIO_ROOT') . '/web/system';
+	$system_path = getenv('AI_COMPETITION_ROOT') . '/web/system';
 
 /*
  *---------------------------------------------------------------
@@ -72,7 +72,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = getenv('VENZIO_ROOT') . '/web/application';
+	$application_folder = getenv('AI_COMPETITION_ROOT') . '/web/application';
 
 /*
  * --------------------------------------------------------------------

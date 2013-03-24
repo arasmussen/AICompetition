@@ -65,7 +65,7 @@ class dashboard extends AuthController {
   }
 
   private function createDirectories($bot_name) {
-    $user_dir = getenv('VENZIO_ROOT') . '/web/bots/' . $this->getUsername();
+    $user_dir = getenv('AI_COMPETITION_ROOT') . '/web/bots/' . $this->getUsername();
     $bot_dir = $user_dir . '/' . $bot_name;
 
     if (!is_dir($user_dir)) {
@@ -77,7 +77,7 @@ class dashboard extends AuthController {
   }
 
   private function uploadFile($bot_name) {
-    $path = getenv('VENZIO_ROOT') . '/web/bots/' . $this->getUsername() . '/' . $bot_name;
+    $path = getenv('AI_COMPETITION_ROOT') . '/web/bots/' . $this->getUsername() . '/' . $bot_name;
     $config['upload_path'] = $path;
     $config['allowed_types'] = '*';
     $config['max_size'] = '1024';

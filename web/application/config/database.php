@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['read']['hostname'] = 'localhost';
 $db['read']['username'] = 'venzio_r';
-$db['read']['password'] = getenv('VENZIO_READ_PASSWORD');
+$db['read']['password'] = getenv('AI_COMPETITION_READ_PASSWORD');
 $db['read']['database'] = 'venzio';
 $db['read']['dbdriver'] = 'mysql';
 $db['read']['dbprefix'] = '';
@@ -66,7 +66,7 @@ $db['read']['stricton'] = FALSE;
 
 $db['write']['hostname'] = 'localhost';
 $db['write']['username'] = 'venzio_w';
-$db['write']['password'] = getenv('VENZIO_WRITE_PASSWORD');
+$db['write']['password'] = getenv('AI_COMPETITION_WRITE_PASSWORD');
 $db['write']['database'] = 'venzio';
 $db['write']['dbdriver'] = 'mysql';
 $db['write']['dbprefix'] = '';
@@ -82,7 +82,7 @@ $db['write']['stricton'] = FALSE;
 
 $db['admin']['hostname'] = 'localhost';
 $db['admin']['username'] = 'venzio_a';
-$db['admin']['password'] = getenv('VENZIO_ADMIN_PASSWORD');
+$db['admin']['password'] = getenv('AI_COMPETITION_ADMIN_PASSWORD');
 $db['admin']['database'] = 'venzio';
 $db['admin']['dbdriver'] = 'mysql';
 $db['admin']['dbprefix'] = '';
